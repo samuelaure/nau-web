@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>9nau — Agencia de Tecnología y Comunicación</title>
+  <meta name="description" content="9nau es una agencia de tecnología y comunicación. Desarrollamos soluciones digitales a medida, sitios web y la plataforma naŭ: inteligencia de marca e IA para creadores de contenido." />
+  <meta name="keywords" content="agencia tecnología, desarrollo web, desarrollo software, inteligencia artificial, contenido, marca, plataforma SaaS, naŭ" />
+  <meta name="author" content="9nau" />
+  <meta property="og:title" content="9nau — Agencia de Tecnología y Comunicación" />
+  <meta property="og:description" content="Desarrollamos software a medida, sitios web y la plataforma naŭ — IA para creadores de contenido." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://www.9nau.com" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="9nau — Agencia de Tecnología y Comunicación" />
+  <meta name="twitter:description" content="Software a medida, sitios web e inteligencia de marca con IA." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/css/style.css" />
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+</head>
+<body>
+
+  <!-- ══════════════ NAV ══════════════ -->
+  <header class="nav" id="nav">
+    <div class="container nav__inner">
+      <a href="#inicio" class="nav__logo" aria-label="9nau inicio">
+        <span class="nav__logo-mark">9</span><span class="nav__logo-brand">nau</span>
+      </a>
+      <nav aria-label="Navegación principal">
+        <ul class="nav__links" id="nav-links">
+          <li><a href="#servicios" class="nav__link">Servicios</a></li>
+          <li><a href="#plataforma" class="nav__link">naŭ Platform</a></li>
+          <li><a href="#nosotros" class="nav__link">Nosotros</a></li>
+          <li><a href="#contacto" class="nav__cta">Hablemos</a></li>
+        </ul>
+      </nav>
+      <button class="nav__burger" id="nav-burger" aria-label="Abrir menú" aria-expanded="false" aria-controls="nav-links">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- ══════════════ HERO ══════════════ -->
+    <section class="hero" id="inicio" aria-labelledby="hero-heading">
+      <div class="hero__bg" aria-hidden="true">
+        <div class="hero__orb hero__orb--1"></div>
+        <div class="hero__orb hero__orb--2"></div>
+        <div class="hero__orb hero__orb--3"></div>
+        <div class="hero__grid"></div>
+      </div>
+      <div class="container hero__content">
+        <div class="hero__eyebrow reveal">Tecnología · Comunicación · IA</div>
+        <h1 class="hero__heading reveal" id="hero-heading">
+          Construimos lo digital<br />
+          <span class="hero__heading-accent">que da forma a tu marca.</span>
+        </h1>
+        <p class="hero__sub reveal">
+          Somos una agencia especializada en desarrollo de software, sitios web y soluciones de comunicación. Además, creamos la <strong>naŭ Platform</strong> — inteligencia de marca e IA para creadores de contenido.
+        </p>
+        <div class="hero__actions reveal">
+          <a href="#contacto" class="btn btn--primary" id="hero-cta">Empieza tu proyecto</a>
+          <a href="#plataforma" class="btn btn--ghost">Conoce naŭ Platform →</a>
+        </div>
+        <div class="hero__stats reveal">
+          <div class="hero__stat">
+            <span class="hero__stat-num">8</span>
+            <span class="hero__stat-label">Servicios de plataforma</span>
+          </div>
+          <div class="hero__stat-divider" aria-hidden="true"></div>
+          <div class="hero__stat">
+            <span class="hero__stat-num">100%</span>
+            <span class="hero__stat-label">Desarrollo a medida</span>
+          </div>
+          <div class="hero__stat-divider" aria-hidden="true"></div>
+          <div class="hero__stat">
+            <span class="hero__stat-num">IA</span>
+            <span class="hero__stat-label">En el núcleo de todo</span>
+          </div>
+        </div>
+      </div>
+      <div class="hero__scroll-indicator" aria-hidden="true">
+        <span class="hero__scroll-line"></span>
+      </div>
+    </section>
+
+    <!-- ══════════════ SERVICIOS ══════════════ -->
+    <section class="section servicios" id="servicios" aria-labelledby="servicios-heading">
+      <div class="container">
+        <div class="section__header reveal">
+          <div class="section__label">Lo que hacemos</div>
+          <h2 class="section__title" id="servicios-heading">Servicios para empresas<br />y creadores</h2>
+          <p class="section__desc">Desde una landing page hasta una plataforma SaaS completa: construimos la solución que tu negocio necesita.</p>
+        </div>
+
+        <div class="servicios__grid">
+
+          <article class="card reveal" id="servicio-desarrollo">
+            <div class="card__icon" aria-hidden="true">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+            </div>
+            <h3 class="card__title">Desarrollo de Software</h3>
+            <p class="card__desc">APIs, backends robustos, dashboards, bots de automatización y plataformas SaaS multi-tenant. Construimos desde cero con arquitecturas modernas.</p>
+            <ul class="card__tags">
+              <li>Node.js / NestJS</li>
+              <li>Next.js</li>
+              <li>PostgreSQL</li>
+              <li>Docker</li>
+            </ul>
+          </article>
+
+          <article class="card reveal" id="servicio-web">
+            <div class="card__icon" aria-hidden="true">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8m-4-4v4"/></svg>
+            </div>
+            <h3 class="card__title">Sitios Web y Landings</h3>
+            <p class="card__desc">Páginas de alta conversión, portafolios y sitios corporativos. Diseño premium, rendimiento optimizado y SEO desde el primer día.</p>
+            <ul class="card__tags">
+              <li>HTML / CSS</li>
+              <li>React</li>
+              <li>SEO técnico</li>
+              <li>Lighthouse ≥90</li>
+            </ul>
+          </article>
+
+          <article class="card reveal" id="servicio-ia">
+            <div class="card__icon" aria-hidden="true">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a10 10 0 1 0 10 10"/><path d="M12 6v6l4 2"/><circle cx="18" cy="6" r="3"/></svg>
+            </div>
+            <h3 class="card__title">Automatización con IA</h3>
+            <p class="card__desc">Flujos inteligentes de contenido, scraping semántico, embeddings vectoriales y agentes de IA integrados en tus procesos de negocio.</p>
+            <ul class="card__tags">
+              <li>OpenAI / LLMs</li>
+              <li>Apify</li>
+              <li>pgvector</li>
+              <li>BullMQ</li>
+            </ul>
+          </article>
+
+          <article class="card reveal" id="servicio-comunicacion">
+            <div class="card__icon" aria-hidden="true">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+            </div>
+            <h3 class="card__title">Comunicación Digital</h3>
+            <p class="card__desc">Estrategia de contenido, gestión de redes sociales y herramientas de CRM omnicanal. Conectamos tu marca con tu audiencia en WhatsApp, Instagram y Telegram.</p>
+            <ul class="card__tags">
+              <li>WhatsApp CRM</li>
+              <li>Instagram API</li>
+              <li>Telegram Bots</li>
+              <li>Contenido con IA</li>
+            </ul>
+          </article>
+
+          <article class="card reveal" id="servicio-mobile">
+            <div class="card__icon" aria-hidden="true">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="2" width="14" height="20" rx="2"/><line x1="12" y1="18" x2="12.01" y2="18"/></svg>
+            </div>
+            <h3 class="card__title">Apps Móviles</h3>
+            <p class="card__desc">Aplicaciones nativas para iOS y Android. Desde overlays de productividad hasta apps de captura de contenido con IA integrada.</p>
+            <ul class="card__tags">
+              <li>React Native / Expo</li>
+              <li>Android nativo</li>
+              <li>Kotlin</li>
+              <li>Offline-first</li>
+            </ul>
+          </article>
+
+          <article class="card reveal" id="servicio-infraestructura">
+            <div class="card__icon" aria-hidden="true">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 6h16M4 10h16M4 14h16M4 18h16"/><rect x="2" y="4" width="20" height="16" rx="2"/></svg>
+            </div>
+            <h3 class="card__title">Infraestructura y DevOps</h3>
+            <p class="card__desc">Servidores seguros, despliegue continuo y monitorización. Arquitecturas resilientes en Docker con Traefik, diseñadas para crecer contigo.</p>
+            <ul class="card__tags">
+              <li>Docker / Traefik</li>
+              <li>GitHub Actions</li>
+              <li>Hetzner</li>
+              <li>Seguridad ≥ A</li>
+            </ul>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ══════════════ PLATAFORMA naŭ ══════════════ -->
+    <section class="section plataforma" id="plataforma" aria-labelledby="plataforma-heading">
+      <div class="container">
+        <div class="section__header reveal">
+          <div class="section__label">Nuestro producto insignia</div>
+          <h2 class="section__title" id="plataforma-heading">La <span class="text-accent">naŭ Platform</span></h2>
+          <p class="section__desc">Una plataforma SaaS multi-tenant de inteligencia de marca, automatización de contenido y herramientas para creadores. Tú construyes tu marca; naŭ trabaja en segundo plano.</p>
+        </div>
+
+        <div class="plataforma__showcase reveal">
+          <div class="plataforma__visual" aria-hidden="true">
+            <div class="plataforma__mockup">
+              <div class="plataforma__mockup-bar">
+                <span></span><span></span><span></span>
+              </div>
+              <div class="plataforma__mockup-screen">
+                <div class="plataforma__pill plataforma__pill--1">🧠 Segunda Mente</div>
+                <div class="plataforma__pill plataforma__pill--2">📸 Inspiración capturada</div>
+                <div class="plataforma__pill plataforma__pill--3">✅ Publicado en Instagram</div>
+                <div class="plataforma__pill plataforma__pill--4">💬 Comentario generado</div>
+                <div class="plataforma__pill plataforma__pill--5">📊 Benchmark: @competidor</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="plataforma__features">
+            <div class="plataforma__feature reveal" id="feat-identidad">
+              <div class="plataforma__feature-icon" aria-hidden="true">🏛️</div>
+              <div>
+                <h3 class="plataforma__feature-title">Identidad centralizada</h3>
+                <p class="plataforma__feature-desc">Un solo workspace, una flota de marcas. Control total de perfiles sociales, prompts e identidad de marca desde un panel unificado.</p>
+              </div>
+            </div>
+            <div class="plataforma__feature reveal" id="feat-contenido">
+              <div class="plataforma__feature-icon" aria-hidden="true">⚡</div>
+              <div>
+                <h3 class="plataforma__feature-title">Motor de contenido (flownaŭ)</h3>
+                <p class="plataforma__feature-desc">Del concepto a Instagram en automático: ideación → composición → renderizado con Remotion → publicación programada. Tú defines la voz; flownaŭ ejecuta.</p>
+              </div>
+            </div>
+            <div class="plataforma__feature reveal" id="feat-inteligencia">
+              <div class="plataforma__feature-icon" aria-hidden="true">🔍</div>
+              <div>
+                <h3 class="plataforma__feature-title">Inteligencia de marca (nauthenticity)</h3>
+                <p class="plataforma__feature-desc">Scraping semántico, transcripciones, embeddings vectoriales, benchmarking de competidores y sugerencias de comentarios generadas por IA.</p>
+              </div>
+            </div>
+            <div class="plataforma__feature reveal" id="feat-zazu">
+              <div class="plataforma__feature-icon" aria-hidden="true">🤖</div>
+              <div>
+                <h3 class="plataforma__feature-title">Zazŭ — tu bot de Telegram</h3>
+                <p class="plataforma__feature-desc">Diario de voz, briefs diarios, sugerencias de comentarios y comandos de plataforma. Todo desde tu chat de Telegram, sin abrir ninguna app.</p>
+              </div>
+            </div>
+            <div class="plataforma__feature reveal" id="feat-segundamente">
+              <div class="plataforma__feature-icon" aria-hidden="true">📖</div>
+              <div>
+                <h3 class="plataforma__feature-title">Segunda Mente</h3>
+                <p class="plataforma__feature-desc">Editor de bloques personal que conecta tus notas y capturas de inspiración con el motor de contenido de tu marca mediante IA.</p>
+              </div>
+            </div>
+            <div class="plataforma__feature reveal" id="feat-whatsnau">
+              <div class="plataforma__feature-icon" aria-hidden="true">💬</div>
+              <div>
+                <h3 class="plataforma__feature-title">WhatsApp CRM (whatsnaŭ)</h3>
+                <p class="plataforma__feature-desc">Gestión de conversaciones de WhatsApp con etiquetas, respuestas rápidas y seguimiento de clientes. Comunicación organizada sin esfuerzo.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="plataforma__stack reveal">
+          <p class="plataforma__stack-label">Construido con tecnología de nivel empresarial</p>
+          <div class="plataforma__stack-items">
+            <span>NestJS</span>
+            <span>Next.js 15</span>
+            <span>React Native</span>
+            <span>PostgreSQL</span>
+            <span>pgvector</span>
+            <span>BullMQ</span>
+            <span>Redis</span>
+            <span>Cloudflare R2</span>
+            <span>Turborepo</span>
+            <span>Docker</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══════════════ NOSOTROS ══════════════ -->
+    <section class="section nosotros" id="nosotros" aria-labelledby="nosotros-heading">
+      <div class="container nosotros__inner">
+        <div class="nosotros__text reveal">
+          <div class="section__label">Quiénes somos</div>
+          <h2 class="section__title" id="nosotros-heading">Tecnología con propósito,<br />construida para durar.</h2>
+          <p>9nau es la agencia detrás de la <strong>naŭ Platform</strong> y de proyectos digitales para clientes. Operamos como un equipo compacto de alto rendimiento: tomamos decisiones rápidas, escribimos código de calidad y no añadimos complejidad sin justificación.</p>
+          <p>Nuestra filosofía es simple: <em>sistemas simples, calidad de élite, sin exceso</em>. Cada línea de código que escribimos está pensada para sobrevivir sin atención constante.</p>
+          <div class="nosotros__pillars">
+            <div class="nosotros__pillar" id="pilar-simplicidad">
+              <span class="nosotros__pillar-icon" aria-hidden="true">◈</span>
+              <div>
+                <strong>Simplicidad primero</strong>
+                <p>La solución más simple que resuelve el problema correctamente siempre es la preferida.</p>
+              </div>
+            </div>
+            <div class="nosotros__pillar" id="pilar-dominio">
+              <span class="nosotros__pillar-icon" aria-hidden="true">◈</span>
+              <div>
+                <strong>Propiedad del dominio</strong>
+                <p>Cada capacidad tiene un servicio dueño. Sin duplicación. Nunca.</p>
+              </div>
+            </div>
+            <div class="nosotros__pillar" id="pilar-seguridad">
+              <span class="nosotros__pillar-icon" aria-hidden="true">◈</span>
+              <div>
+                <strong>Seguridad como base</strong>
+                <p>La seguridad no es una característica. Es el suelo sobre el que todo se construye.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="nosotros__visual reveal" aria-hidden="true">
+          <div class="nosotros__card-stack">
+            <div class="nosotros__card nosotros__card--back"></div>
+            <div class="nosotros__card nosotros__card--mid"></div>
+            <div class="nosotros__card nosotros__card--front">
+              <div class="nosotros__card-logo">9<span>nau</span></div>
+              <div class="nosotros__card-tagline">Lean systems.<br/>Elite quality.<br/>No excess.</div>
+              <div class="nosotros__card-dots" aria-hidden="true">
+                <span></span><span></span><span></span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══════════════ CONTACTO ══════════════ -->
+    <section class="section contacto" id="contacto" aria-labelledby="contacto-heading">
+      <div class="container">
+        <div class="section__header reveal">
+          <div class="section__label">¿Empezamos?</div>
+          <h2 class="section__title" id="contacto-heading">Cuéntanos tu proyecto</h2>
+          <p class="section__desc">Tanto si tienes una idea concreta como si solo tienes una visión, estamos listos para escucharte.</p>
+        </div>
+        <div class="contacto__inner">
+          <form class="contacto__form reveal" id="contact-form" novalidate>
+            <div class="form__row">
+              <div class="form__group">
+                <label for="contact-name" class="form__label">Nombre</label>
+                <input type="text" id="contact-name" name="name" class="form__input" placeholder="Tu nombre" required autocomplete="name" />
+              </div>
+              <div class="form__group">
+                <label for="contact-email" class="form__label">Email</label>
+                <input type="email" id="contact-email" name="email" class="form__input" placeholder="tu@email.com" required autocomplete="email" />
+              </div>
+            </div>
+            <div class="form__group">
+              <label for="contact-service" class="form__label">¿En qué podemos ayudarte?</label>
+              <select id="contact-service" name="service" class="form__input form__select">
+                <option value="" disabled selected>Selecciona un servicio</option>
+                <option value="software">Desarrollo de software a medida</option>
+                <option value="web">Sitio web o landing page</option>
+                <option value="ia">Automatización con IA</option>
+                <option value="comunicacion">Comunicación digital</option>
+                <option value="mobile">App móvil</option>
+                <option value="plataforma">naŭ Platform</option>
+                <option value="otro">Otro / No lo sé aún</option>
+              </select>
+            </div>
+            <div class="form__group">
+              <label for="contact-message" class="form__label">Mensaje</label>
+              <textarea id="contact-message" name="message" class="form__input form__textarea" placeholder="Cuéntanos sobre tu proyecto, idea o necesidad..." rows="5" required></textarea>
+            </div>
+            <button type="submit" class="btn btn--primary btn--full" id="contact-submit">
+              <span class="btn__text">Enviar mensaje</span>
+              <span class="btn__icon" aria-hidden="true">→</span>
+            </button>
+            <p class="form__note">Respondemos en menos de 24 horas laborables.</p>
+          </form>
+          <div class="contacto__info reveal">
+            <div class="contacto__info-card" id="contacto-telegram">
+              <div class="contacto__info-icon" aria-hidden="true">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/></svg>
+              </div>
+              <div>
+                <strong>Telegram</strong>
+                <p>La forma más rápida de contactarnos directamente.</p>
+                <a href="https://t.me/samuelaure" target="_blank" rel="noopener noreferrer" class="contacto__link">@samuelaure →</a>
+              </div>
+            </div>
+            <div class="contacto__info-card" id="contacto-email">
+              <div class="contacto__info-icon" aria-hidden="true">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+              </div>
+              <div>
+                <strong>Email</strong>
+                <p>Para propuestas formales y documentación.</p>
+                <a href="mailto:hola@9nau.com" class="contacto__link">hola@9nau.com →</a>
+              </div>
+            </div>
+            <div class="contacto__info-card contacto__info-card--platform" id="contacto-plataforma">
+              <div class="contacto__info-icon" aria-hidden="true">🌐</div>
+              <div>
+                <strong>naŭ Platform</strong>
+                <p>¿Quieres explorar la plataforma directamente?</p>
+                <a href="https://app.9nau.com" target="_blank" rel="noopener noreferrer" class="contacto__link">app.9nau.com →</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ══════════════ FOOTER ══════════════ -->
+  <footer class="footer">
+    <div class="container footer__inner">
+      <div class="footer__brand">
+        <a href="#inicio" class="nav__logo" aria-label="9nau">
+          <span class="nav__logo-mark">9</span><span class="nav__logo-brand">nau</span>
+        </a>
+        <p class="footer__tagline">Lean systems. Elite quality. No excess.</p>
+      </div>
+      <nav class="footer__links" aria-label="Navegación del pie de página">
+        <div class="footer__col">
+          <strong>Servicios</strong>
+          <a href="#servicio-desarrollo">Desarrollo de Software</a>
+          <a href="#servicio-web">Sitios Web</a>
+          <a href="#servicio-ia">IA & Automatización</a>
+          <a href="#servicio-comunicacion">Comunicación Digital</a>
+          <a href="#servicio-mobile">Apps Móviles</a>
+        </div>
+        <div class="footer__col">
+          <strong>naŭ Platform</strong>
+          <a href="#feat-identidad">Identidad centralizada</a>
+          <a href="#feat-contenido">flownaŭ</a>
+          <a href="#feat-inteligencia">nauthenticity</a>
+          <a href="#feat-zazu">Zazŭ Bot</a>
+          <a href="#feat-whatsnau">whatsnaŭ</a>
+        </div>
+        <div class="footer__col">
+          <strong>Empresa</strong>
+          <a href="#nosotros">Nosotros</a>
+          <a href="#contacto">Contacto</a>
+          <a href="https://t.me/samuelaure" target="_blank" rel="noopener noreferrer">Telegram</a>
+        </div>
+      </nav>
+    </div>
+    <div class="footer__bottom container">
+      <p>© <span id="footer-year">2025</span> 9nau. Todos los derechos reservados.</p>
+      <p class="footer__made">Hecho con 🧠 e IA · <a href="https://9nau.com">9nau.com</a></p>
+    </div>
+  </footer>
+
+  <!-- Toast notification -->
+  <div class="toast" id="toast" role="alert" aria-live="polite" aria-atomic="true"></div>
+
+  <script src="/js/main.js"></script>
+</body>
+</html>

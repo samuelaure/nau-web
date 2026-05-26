@@ -1,0 +1,16 @@
+{
+  "name": "nau-web",
+  "version": "1.0.0",
+  "description": "9nau — Agencia de Tecnología y Comunicación",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node server.js"
+  },
+  "dependencies": {
+    "express": "^4.18.2"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}
