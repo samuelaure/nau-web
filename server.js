@@ -11,27 +11,45 @@ app.use(express.json());
 app.use(express.static(path.join(__dirname, 'public')));
 
 // ── Contact form API ────────────────────────────────────────────────────────
-// Simple endpoint: logs to console + responds OK.
-// For production, wire up an email service (Nodemailer / Resend) or
-// forward to Zazŭ via the ZAZU_CONTACT_ENDPOINT env var.
-app.post('/api/contact', (req, res) => {
+// Forwards the submission to Zazŭ (/api/public/nau-web/contact) which sends
+// a Telegram message to the admin. Auth uses a static shared secret in the
+// x-nau-web-secret header (NAU_WEB_WEBHOOK_SECRET env var).
+app.post('/api/contact', async (req, res) => {
   const { name, email, service, message } = req.body;
 
   if (!name || !email || !message) {
     return res.status(400).json({ error: 'Missing required fields' });
   }
 
-  // Log the contact request (visible in Hostinger logs)
-  console.log('── New contact submission ──────────────────────');
-  console.log(`Name:    ${name}`);
-  console.log(`Email:   ${email}`);
-  console.log(`Service: ${service || 'Not specified'}`);
-  console.log(`Message: ${message}`);
-  console.log('────────────────────────────────────────────────');
+  const zazuUrl = process.env.ZAZU_URL;
+  const secret  = process.env.NAU_WEB_WEBHOOK_SECRET;
 
-  // TODO (optional): forward to Zazŭ Telegram or send email via Nodemailer/Resend
+  if (!zazuUrl || !secret) {
+    console.error('[Contact] ZAZU_URL or NAU_WEB_WEBHOOK_SECRET is not configured');
+    return res.status(503).json({ error: 'Contact endpoint not configured' });
+  }
 
-  return res.status(200).json({ ok: true });
+  try {
+    const response = await fetch(`${zazuUrl}/api/public/nau-web/contact`, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        'x-nau-web-secret': secret,
+      },
+      body: JSON.stringify({ name, email, service, message }),
+    });
+
+    if (!response.ok) {
+      const text = await response.text();
+      console.error(`[Contact] Zazŭ responded ${response.status}: ${text}`);
+      return res.status(502).json({ error: 'Failed to forward contact' });
+    }
+
+    return res.status(200).json({ ok: true });
+  } catch (err) {
+    console.error('[Contact] Failed to reach Zazŭ:', err);
+    return res.status(500).json({ error: 'Internal error' });
+  }
 });
 
 // SPA fallback — all other routes serve index.html
