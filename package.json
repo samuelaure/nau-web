@@ -4,6 +4,7 @@
   "description": "9nau — Agencia de Tecnología y Comunicación",
   "main": "server.js",
   "scripts": {
+    "build": "echo 'No build step required'",
     "start": "node server.js",
     "dev": "node server.js"
   },
