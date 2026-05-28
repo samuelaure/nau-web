@@ -664,10 +664,52 @@ h1, h2, h3, h4 {
 
 /* ── Responsive Rules ───────────────────────────────────────────────────── */
 @media (max-width: 768px) {
+  .header {
+    height: auto;
+    padding-block: .75rem;
+  }
+  .header__inner {
+    flex-direction: column;
+    gap: .75rem;
+    align-items: center;
+  }
+  .hero {
+    padding-top: calc(var(--nav-h) + 4.5rem);
+    padding-bottom: 3rem;
+  }
   .contrast {
     grid-template-columns: 1fr;
   }
   .form-row {
     grid-template-columns: 1fr;
   }
+  .pricing-card {
+    padding: 2.25rem 1.5rem;
+  }
+  .lead-form {
+    padding: 1.75rem 1.25rem;
+  }
 }
+
+@media (max-width: 480px) {
+  .hero__actions {
+    flex-direction: column;
+    width: 100%;
+  }
+  .hero__actions .btn {
+    width: 100%;
+  }
+  .features-grid {
+    grid-template-columns: 1fr;
+  }
+  .pricing-card__amount {
+    font-size: 2.85rem;
+  }
+  .pricing-card {
+    padding: 2rem 1.25rem;
+  }
+  .lead-form {
+    padding: 1.5rem 1rem;
+  }
+}
+

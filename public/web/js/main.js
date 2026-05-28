@@ -1,26 +1,24 @@
 /* ─────────────────────────────────────────────────────────────────────────
    9nau Web Offer Page — main.js
-   Dynamic Toggle + FAQ accordion + Contact API submission + mailto fallback
+   Dynamic Currency Toggle + FAQ accordion + Contact API submission + mailto fallback
    ───────────────────────────────────────────────────────────────────────── */
 
 'use strict';
 
 document.addEventListener('DOMContentLoaded', () => {
 
-  // ── Regional Data Configuration ───────────────────────────────────────────
-  const regionalData = {
-    ve: {
-      eyebrow: 'El venezolano sabe resolver. Pero resolver ya no basta.',
-      title: 'Ahora hay que <span class="text-gradient">verse profesional</span>.',
-      bannerText: 'Muchos tienen seguidores. Pocos tienen presencia profesional y control sobre su plataforma.',
+  // ── Currency Data Configuration ──────────────────────────────────────────
+  const currencyData = {
+    usd: {
       currency: 'US$',
       amount: '360',
-      billing: 'Pago único · Dominio incluido',
+      billing: 'Pago único · Dominio y Hosting incluidos',
       features: [
         '🌐 Web profesional a medida',
         '⚡ Lista y online en 48 horas',
         '💬 Integración de WhatsApp directo',
-        '🛡️ Dominio propio (.com o similar) incluido',
+        '🛡️ Dominio y hosting incluidos',
+        '📱 Adaptada 100% a celulares',
         '🎨 Diseño moderno de alto impacto',
         '📈 SEO base para indexación en Google'
       ],
@@ -31,10 +29,7 @@ document.addEventListener('DOMContentLoaded', () => {
         'Construir una marca seria y confiable'
       ]
     },
-    cl: {
-      eyebrow: 'Esta semana · Tu negocio necesita algo más que Instagram.',
-      title: 'Una web que transmite <span class="text-gradient">confianza y orden</span>.',
-      bannerText: 'Hoy muchas personas buscan primero en internet antes de decidir con quién trabajar. Una buena web marca la diferencia.',
+    clp: {
       currency: 'CLP $',
       amount: '360.000',
       billing: 'Pago único · Dominio y Hosting incluidos',
@@ -42,29 +37,25 @@ document.addEventListener('DOMContentLoaded', () => {
         '🌐 Web profesional a medida',
         '⚡ Lista y online en 48 horas',
         '💬 Integración de WhatsApp directo',
-        '🛡️ Dominio propio y hosting incluidos',
+        '🛡️ Dominio y hosting incluidos',
         '📱 Adaptada 100% a celulares',
         '🎨 Diseño moderno de alto impacto',
         '📈 SEO base para indexación en Google'
       ],
       idealFor: [
-        'Emprendedores y tiendas locales',
+        'Emprendedores y marcas locales',
         'Profesionales independientes',
-        'Negocios en crecimiento',
+        'Negocios y servicios locales',
         'Marcas personales que buscan destacar'
       ]
     }
   };
 
-  let activeRegion = 've';
+  let activeCurrency = 'usd';
 
   // ── DOM Elements ──────────────────────────────────────────────────────────
-  const switcherBtnVe = document.getElementById('switch-ve');
-  const switcherBtnCl = document.getElementById('switch-cl');
-  
-  const heroEyebrow    = document.getElementById('hero-eyebrow');
-  const heroTitle      = document.getElementById('hero-title');
-  const contrastBanner = document.getElementById('contrast-banner');
+  const switcherBtnUsd = document.getElementById('switch-usd');
+  const switcherBtnClp = document.getElementById('switch-clp');
   
   const priceCurrency  = document.getElementById('price-currency');
   const priceAmount    = document.getElementById('price-amount');
@@ -74,38 +65,33 @@ document.addEventListener('DOMContentLoaded', () => {
   const idealList      = document.getElementById('ideal-list');
 
   // ── Update Content with Fade Animation ─────────────────────────────────────
-  function updateContent(region) {
-    if (!regionalData[region]) return;
-    activeRegion = region;
-    const data = regionalData[region];
+  function updateContent(curr) {
+    if (!currencyData[curr]) return;
+    activeCurrency = curr;
+    const data = currencyData[curr];
 
     // Toggle switcher active button
-    switcherBtnVe.classList.toggle('active', region === 've');
-    switcherBtnCl.classList.toggle('active', region === 'cl');
+    if (switcherBtnUsd) switcherBtnUsd.classList.toggle('active', curr === 'usd');
+    if (switcherBtnClp) switcherBtnClp.classList.toggle('active', curr === 'clp');
 
     // Smooth transition: fade out elements, update content, fade in
-    const animElements = [heroEyebrow, heroTitle, contrastBanner, priceCurrency, priceAmount, priceBilling, featureList, idealList];
+    const animElements = [priceCurrency, priceAmount, priceBilling, featureList, idealList];
     
     animElements.forEach(el => {
       if (el) {
         el.style.opacity = '0';
-        el.style.transform = 'translateY(8px)';
-        el.style.transition = 'opacity 200ms ease, transform 200ms ease';
+        el.style.transform = 'translateY(6px)';
+        el.style.transition = 'opacity 180ms ease, transform 180ms ease';
       }
     });
 
     setTimeout(() => {
-      // 1. Hero text updates
-      if (heroEyebrow) heroEyebrow.textContent = data.eyebrow;
-      if (heroTitle) heroTitle.innerHTML = data.title;
-      if (contrastBanner) contrastBanner.textContent = data.bannerText;
-
-      // 2. Pricing updates
+      // 1. Pricing updates
       if (priceCurrency) priceCurrency.textContent = data.currency;
       if (priceAmount) priceAmount.textContent = data.amount;
       if (priceBilling) priceBilling.textContent = data.billing;
 
-      // 3. Features updates
+      // 2. Features updates
       if (featureList) {
         featureList.innerHTML = data.features.map(feat => `
           <li class="pricing-details__item">
@@ -115,7 +101,7 @@ document.addEventListener('DOMContentLoaded', () => {
         `).join('');
       }
 
-      // 4. Ideal For list updates
+      // 3. Ideal For list updates
       if (idealList) {
         idealList.innerHTML = data.idealFor.map(item => `
           <li class="pricing-details__item">
@@ -132,19 +118,20 @@ document.addEventListener('DOMContentLoaded', () => {
           el.style.transform = 'translateY(0)';
         }
       });
-    }, 200);
+    }, 180);
   }
 
   // ── Switcher Event Listeners ──────────────────────────────────────────────
-  if (switcherBtnVe) switcherBtnVe.addEventListener('click', () => updateContent('ve'));
-  if (switcherBtnCl) switcherBtnCl.addEventListener('click', () => updateContent('cl'));
+  if (switcherBtnUsd) switcherBtnUsd.addEventListener('click', () => updateContent('usd'));
+  if (switcherBtnClp) switcherBtnClp.addEventListener('click', () => updateContent('clp'));
 
-  // Initialize with 've' (Venezuela/Global) or check if query param specifies 'cl'
+  // Initialize with 'usd' or check if query param specifies 'clp'
   const urlParams = new URLSearchParams(window.location.search);
-  if (urlParams.get('ref') === 'cl' || urlParams.get('country') === 'cl') {
-    updateContent('cl');
+  const ref = urlParams.get('ref') || urlParams.get('currency');
+  if (ref === 'clp' || ref === 'cl') {
+    updateContent('clp');
   } else {
-    updateContent('ve');
+    updateContent('usd');
   }
 
   // ── FAQ Accordion Toggle ──────────────────────────────────────────────────
@@ -191,7 +178,7 @@ document.addEventListener('DOMContentLoaded', () => {
       const name = form.elements['name'].value.trim();
       const email = form.elements['email'].value.trim();
       const message = form.elements['message'].value.trim();
-      const regionLabel = activeRegion === 've' ? 'Venezuela / USD' : 'Chile / CLP';
+      const currencyLabel = activeCurrency === 'usd' ? 'USD ($360)' : 'CLP ($360.000)';
 
       // Validation
       if (!name || !email || !message) {
@@ -214,7 +201,7 @@ document.addEventListener('DOMContentLoaded', () => {
           body: JSON.stringify({
             name,
             email,
-            service: `Oferta Web US$360 (${regionLabel})`,
+            service: `Oferta Web ${currencyLabel}`,
             message: message
           }),
         });
@@ -229,11 +216,11 @@ document.addEventListener('DOMContentLoaded', () => {
         console.warn('API submission failed, falling back to mailto:', err);
         
         // Mailto fallback
-        const subject = encodeURIComponent(`[9nau Oferta Web] Consulta de ${name} (${regionLabel})`);
+        const subject = encodeURIComponent(`[9nau Oferta Web] Consulta de ${name} (${currencyLabel})`);
         const body = encodeURIComponent(
           `Nombre: ${name}\n` +
           `Email: ${email}\n` +
-          `Oferta de origen: ${regionLabel}\n\n` +
+          `Moneda de interés: ${currencyLabel}\n\n` +
           `Mensaje:\n${message}`
         );
         window.location.href = `mailto:hola@9nau.com?subject=${subject}&body=${body}`;
